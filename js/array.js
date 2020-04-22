@@ -35,5 +35,12 @@
 
 // ---------------------------------------------------------------------
 
-// .compact(array)
-// Creates an array with all falsy values removed.
+// .difference(array, [values])
+// Creates a new array concatenating array with any additional arrays and/or values.
+
+const array = ["a", "b", "c", "d", "e", "f"];
+
+const difference = () => {};
+
+const result = difference(array, [2]);
+console.log(result);
