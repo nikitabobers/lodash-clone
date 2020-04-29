@@ -7,7 +7,7 @@
 // const chunk = (arr, size) => {
 //     let output = [];
 //     let newArr = [...arr];
-//     if (size <= 0) return newArr;
+//     if (size <!-- <= 0) return newArr;
 //     while (newArr.length) output.push(newArr.splice(0, size));
 //     return output;
 // };
@@ -22,12 +22,12 @@
 
 // const array = [1, 2, 0, "", 4, false];
 
-// const compact = ([...arr]) => {
-//     let output = [];
-//     for (let truthy of arr) {
-//         if (truthy) output.push(truthy);
-//     }
-//     return output;
+// const compact = ([...arr]) => --> {
+// 			let output = [];
+// 	for (let truthy of arr) {
+// 		if (truthy) output.push(truthy);
+// 	}
+// 	return output;
 // };
 
 // const result = compact(array);
@@ -38,9 +38,18 @@
 // .difference(array, [values])
 // Creates a new array concatenating array with any additional arrays and/or values.
 
-const array = ["a", "b", "c", "d", "e", "f"];
+const array = [1, 2, 3, 4];
 
-const difference = () => {};
+const difference = (arr, values) => {
+    const output = [];
+    arr.filter(value => {
+        if (values.includes(value)) {
+            output.push(value);
+        }
+    });
+    return output;
+};
 
-const result = difference(array, [2]);
+const result = difference(array, [2, 3]);
 console.log(result);
+// ---------------------------------------------------------------------
