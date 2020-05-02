@@ -25,7 +25,7 @@
 // const compact = ([...arr]) => --> {
 // 			let output = [];
 // 	for (let truthy of arr) {
-// 		if (truthy) output.push(truthy);
+
 // 	}
 // 	return output;
 // };
@@ -58,24 +58,51 @@
 // .drop(array, [n])
 // Creates a slice of array with n elements dropped from the end.
 
-const array = [1, 2, 3, 4];
+// const array = [1, 2, 3, 4];
 
-const drop = (arr, n) => {
-    const output = [...arr];
-    if (n <= 0 || n === undefined) {
-        return arr;
-    }
-    while (n > 0) {
-        n--;
-        output.pop();
-    }
-    return output;
-};
+// const drop = (arr, n) => {
+//     const output = [...arr];
+//     if (n <= 0 || n === undefined) {
+//         return arr;
+//     }
+//     while (n > 0) {
+//         n--;
+//         output.pop();
+//     }
+//     return output;
+// };
 
-const result = drop(array, 2);
-console.log(result);
+// const result = drop(array, 2);
+// console.log(result);
 
 // ---------------------------------------------------------------------
 
-// .drop(array, [n])
-// Creates a slice of array with n elements dropped from the end.
+// .flatten(array)
+// Flattens array a single level deep
+
+// const array = [1, 2, 3, [4, 5, [6]]];
+
+// const flatten = arr => {
+//     arr.flat();
+//     return arr;
+// };
+
+// const result = flatten(array);
+// console.log(result);
+
+// ---------------------------------------------------------------------
+
+// .flattenDeep(array)
+// Flattens array a single level deep
+
+const array = [1, 2, 3, [4, 5, [6]]];
+
+const flattenDeep = arr => {
+    return arr.reduce(
+        (acc, val) => acc.concat(Array.isArray(val) ? flattenDeep(val) : val),
+        []
+    );
+};
+
+const result = flattenDeep(array);
+console.log(result);
