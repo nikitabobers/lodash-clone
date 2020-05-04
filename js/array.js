@@ -95,14 +95,27 @@
 // .flattenDeep(array)
 // Flattens array a single level deep
 
-const array = [1, 2, 3, [4, 5, [6]]];
+// const array = [1, 2, 3, [4, 5, [6]]];
 
-const flattenDeep = arr => {
-    return arr.reduce(
-        (acc, val) => acc.concat(Array.isArray(val) ? flattenDeep(val) : val),
-        []
-    );
+// const flattenDeep = arr => {
+//     return arr.reduce(
+//         (acc, val) => acc.concat(Array.isArray(val) ? flattenDeep(val) : val),
+//         []
+//     );
+// };
+
+// const result = flattenDeep(array);
+// console.log(result);
+
+// ---------------------------------------------------------------------
+
+// .fill(array, n)
+// Fill elemtns of array with value
+
+const array = [1, 2, 3];
+
+const fill = (arr, n) => {
+    return arr.fill(n);
 };
 
-const result = flattenDeep(array);
-console.log(result);
+console.log(fill(array, 'a'));
