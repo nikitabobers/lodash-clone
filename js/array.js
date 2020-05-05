@@ -125,12 +125,38 @@
 // .findIndex(array)
 // Returns index of first element that predicate returns truthy
 
-const users = [
-  { user: "barney", age: 3, active: true },
-  { user: "fred", age: 4, active: false },
-  { user: "pebbles", age: 11, active: true },
-];
+// const users = [
+//   { user: "barney", age: 3, active: true },
+//   { user: "fred", age: 4, active: false },
+//   { user: "pebbles", age: 11, active: true },
+// ];
 
-const result = users.findIndex((o) => o.age >= 10);
+// const result = users.findIndex((o) => o.age >= 10);
 
-console.log(result);
+// console.log(result);
+
+// ---------------------------------------------------------------------
+
+// .fromPairs(array)
+
+// const array = [
+//   ["x", 10],
+//   ["y", 5],
+// ];
+// const fromPairs = (arr) => {
+//   return Object.fromEntries(arr);
+// };
+// const result = fromPairs(array);
+// console.log(result);
+
+// ---------------------------------------------------------------------
+
+// // Head and Tail
+// const array = [1, 2, 3, 4];
+// const [head, ...tail] = array;
+// console.log(tail);
+
+// Last and Initial
+const array = [1, 2, 3, 4];
+const [last, ...initial] = array.reverse();
+console.log(initial);
