@@ -112,10 +112,25 @@
 // .fill(array, n)
 // Fill elemtns of array with value
 
-const array = [1, 2, 3];
+// const array = [1, 2, 3];
 
-const fill = (arr, n) => {
-    return arr.fill(n);
-};
+// const fill = (arr, n) => {
+//     return arr.fill(n);
+// };
 
-console.log(fill(array, 'a'));
+// console.log(fill(array, 'a'));
+
+// ---------------------------------------------------------------------
+
+// .findIndex(array)
+// Returns index of first element that predicate returns truthy
+
+const users = [
+  { user: "barney", age: 3, active: true },
+  { user: "fred", age: 4, active: false },
+  { user: "pebbles", age: 11, active: true },
+];
+
+const result = users.findIndex((o) => o.age >= 10);
+
+console.log(result);
