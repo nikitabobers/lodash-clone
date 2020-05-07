@@ -156,7 +156,19 @@
 // const [head, ...tail] = array;
 // console.log(tail);
 
-// Last and Initial
-const array = [1, 2, 3, 4];
-const [last, ...initial] = array.reverse();
-console.log(initial);
+// // Last and Initial
+// const array = [1, 2, 3, 4];
+// const [last, ...initial] = array.reverse();
+// console.log(initial);
+
+// ---------------------------------------------------------------------
+
+// .initial(array)
+// Gets all but the last elements of arrays
+
+const array = [1, 2, 3, 4, 5];
+
+const initial = (arr) => {
+  return arr.slice(0, -1);
+};
+console.log(initial(array));
