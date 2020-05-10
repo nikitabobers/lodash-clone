@@ -178,10 +178,17 @@
 // .intersection(array)
 // Creates an array of unique values that are included in all given arrays
 
-const arrays = [[1, 2, 3, 4]];
+// const intersection = (arr, ...args) => {
+//   return arr.filter((item) => args.every((arr) => arr.includes(item)));
+// };
 
-const intersection = (arr, ...args) => {
-  return arr.filter((item) => args.every((arr) => arr.includes(item)));
-};
+// console.log(intersection([1, 2, 3], [1, 2], [1, 2, 4]));
 
-console.log(intersection([1, 2, 3], [1, 2], [1, 2, 4]));
+// ---------------------------------------------------------------------
+
+// .join(array, separator)
+
+// const join = (arr, symbol) => {
+//   return arr.join(symbol);
+// };
+// console.log(join([1, 2, 3], "-"));
