@@ -166,9 +166,22 @@
 // .initial(array)
 // Gets all but the last elements of arrays
 
-const array = [1, 2, 3, 4, 5];
+// const array = [1, 2, 3, 4, 5];
 
-const initial = (arr) => {
-  return arr.slice(0, -1);
+// const initial = (arr) => {
+//   return arr.slice(0, -1);
+// };
+// console.log(initial(array));
+
+// ---------------------------------------------------------------------
+
+// .intersection(array)
+// Creates an array of unique values that are included in all given arrays
+
+const arrays = [[1, 2, 3, 4]];
+
+const intersection = (arr, ...args) => {
+  return arr.filter((item) => args.every((arr) => arr.includes(item)));
 };
-console.log(initial(array));
+
+console.log(intersection([1, 2, 3], [1, 2], [1, 2, 4]));
