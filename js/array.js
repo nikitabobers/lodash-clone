@@ -192,3 +192,23 @@
 //   return arr.join(symbol);
 // };
 // console.log(join([1, 2, 3], "-"));
+
+// ---------------------------------------------------------------------
+
+// .last(array)
+// Gets the last element of array
+
+// const last = (arr) => {
+//   return arr[arr.length - 1];
+// };
+
+// console.log(last([1, 2, 3]));
+
+// ---------------------------------------------------------------------
+// .nth(array, [n=0])
+
+const nth = (array, index) => {
+  return index < 0 ? array[Math.abs(index)] : array[index];
+};
+
+console.log(nth(["a", "b", "c"], -2));
