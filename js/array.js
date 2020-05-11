@@ -205,10 +205,32 @@
 // console.log(last([1, 2, 3]));
 
 // ---------------------------------------------------------------------
+
 // .nth(array, [n=0])
 
-const nth = (array, index) => {
-  return index < 0 ? array[Math.abs(index)] : array[index];
+// const nth = (array, index) => {
+//   return index < 0 ? array[Math.abs(index)] : array[index];
+// };
+
+// console.log(nth(["a", "b", "c"], -2));
+
+// ---------------------------------------------------------------------
+
+// .pulll(array, [value])
+
+// const pull = (array, value) => {
+//   return array.filter((index) => index !== value);
+// };
+
+// console.log(pull([1, 2, 3, 3, 2, 1, 1], 2));
+// console.log(pull(["a", "b", "a", "c"], "a"));
+
+// ---------------------------------------------------------------------
+
+// .pullAll(array, [values])
+
+const pullAll = (array, value) => {
+  return array.filter((item) => !value.includes(item));
 };
 
-console.log(nth(["a", "b", "c"], -2));
+console.log(pullAll([1, 2, 3, 4, 4, 1], [1, 4]));
