@@ -229,8 +229,24 @@
 
 // .pullAll(array, [values])
 
-const pullAll = (array, value) => {
-  return array.filter((item) => !value.includes(item));
+// const pullAll = (array, value) => {
+//   return array.filter((item) => !value.includes(item));
+// };
+
+// console.log(pullAll([1, 2, 3, 4, 4, 1], [1, 4]));
+
+// ---------------------------------------------------------------------
+
+// .pullAt(array, [indexes])
+
+const array = ["a", "b", "c", "d", "e"];
+
+const pullAt = (array, range) => {
+  return range
+    .reverse()
+    .map((i) => array.splice(i, 1)[0])
+    .reverse();
 };
 
-console.log(pullAll([1, 2, 3, 4, 4, 1], [1, 4]));
+console.log(array);
+console.log(pullAt(array, [1, 3]));
