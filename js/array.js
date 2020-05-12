@@ -239,14 +239,38 @@
 
 // .pullAt(array, [indexes])
 
-const array = ["a", "b", "c", "d", "e"];
+// const array = ["a", "b", "c", "d", "e"];
 
-const pullAt = (array, range) => {
-  return range
-    .reverse()
-    .map((i) => array.splice(i, 1)[0])
-    .reverse();
+// const pullAt = (array, range) => {
+//   return range
+//     .reverse()
+//     .map((i) => array.splice(i, 1)[0])
+//     .reverse();
+// };
+
+// console.log(array);
+// console.log(pullAt(array, [1, 3]));
+
+// ---------------------------------------------------------------------
+
+// .remove(array, [predicate])
+const array = [1, 2, 3, 4, 5, 6];
+
+const remove = (array, fn) => {
+  return array.filter((item, i) => fn(item) && array.splice(i, 1));
 };
 
+const evens = remove(array, (n) => n % 2 === 0);
+
 console.log(array);
-console.log(pullAt(array, [1, 3]));
+console.log(evens);
+
+// ---------------------------------------------------------------------
+
+// .reverse(array)
+
+// const reverse = (array) => {
+//   return array.reverse();
+// };
+
+// console.log(reverse([1, 2, 3]));
