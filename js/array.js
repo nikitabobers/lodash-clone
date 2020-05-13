@@ -254,16 +254,16 @@
 // ---------------------------------------------------------------------
 
 // .remove(array, [predicate])
-const array = [1, 2, 3, 4, 5, 6];
+// const array = [1, 2, 3, 4, 5, 6];
 
-const remove = (array, fn) => {
-  return array.filter((item, i) => fn(item) && array.splice(i, 1));
-};
+// const remove = (array, fn) => {
+//   return array.filter((item, i) => fn(item) && array.splice(i, 1));
+// };
 
-const evens = remove(array, (n) => n % 2 === 0);
+// const evens = remove(array, (n) => n % 2 === 0);
 
-console.log(array);
-console.log(evens);
+// console.log(array);
+// console.log(evens);
 
 // ---------------------------------------------------------------------
 
@@ -274,3 +274,51 @@ console.log(evens);
 // };
 
 // console.log(reverse([1, 2, 3]));
+
+// ---------------------------------------------------------------------
+
+// .sortedIndex(array, value)
+
+// const sortedIndex = (array, value) => {
+//   array.sort();
+//   for (let i of array) {
+//     if (i > value) return array.indexOf(i);
+//   }
+// };
+// console.log(sortedIndex([3, 1, 7, 6, 9, 8, 2, 5], 4));
+
+// ---------------------------------------------------------------------
+
+// .sortIndexOf (array, value)
+
+// const sortIndexOf = (arr, value) => [...arr].sort().indexOf(value);
+
+// console.log(sortIndexOf([2, 8, 5, 1, 2, 7], 5));
+
+// ---------------------------------------------------------------------
+
+// .uniq(array)
+// Creates duplicate-free version of an array
+
+// const array = [1, 2, 2, 3, 4, 4];
+
+// const unique = [...new Set(array)];
+
+// console.log(unique);
+
+// ---------------------------------------------------------------------
+
+// .sortedUniq(array)
+
+const array = [6, 5, 7, 2, 1, 5, 4, 6, 7];
+
+// // Filter method
+// const sortedUniq = (array) => {
+//   return array.sort().filter((item, index) => {
+//     return array.indexOf(item) === index;
+//   });
+// };
+
+// // Set method
+const sortedUniq = (array) => [...new Set(array)].sort();
+console.log(sortedUniq(array));
