@@ -1,8 +1,11 @@
 // ------------------ Array ------------------
+
+const array4 = [1, 2, 3, 4];
+const array6 = [1, 2, 3, 4, 5, 6];
+const arrayAF = ["a", "b", "c", "d", "e", "f"];
+
 // .chunk(array, [size=1])
 // Creates an array of elements split into groups the length of size.
-
-// const array = ["a", "b", "c", "d", "e", "f"];
 
 // const chunk = (arr, size) => {
 //     let output = [];
@@ -310,7 +313,7 @@
 
 // .sortedUniq(array)
 
-const array = [6, 5, 7, 2, 1, 5, 4, 6, 7];
+// const array = [6, 5, 7, 2, 1, 5, 4, 6, 7];
 
 // // Filter method
 // const sortedUniq = (array) => {
@@ -320,5 +323,53 @@ const array = [6, 5, 7, 2, 1, 5, 4, 6, 7];
 // };
 
 // // Set method
-const sortedUniq = (array) => [...new Set(array)].sort();
-console.log(sortedUniq(array));
+// const sortedUniq = (array) => [...new Set(array)].sort();
+
+// console.log(sortedUniq(array));
+
+// ---------------------------------------------------------------------
+
+// .tail(array)
+// Gets all but the firsdt element of array
+
+// const array = [1, 2, 3, 4];
+
+// const tail = (array) => array.slice(1);
+// const tail = (array) => array.splice(0, 1);
+
+// console.log(tail(array));
+
+// ---------------------------------------------------------------------
+
+// .take(array, [n=1])
+// Creates a slice of array with n elements taken from the beginning.
+
+// const take = (array, number) => {
+//   if (number == null) {
+//     return array.slice(0, 1);
+//   }
+//   return array.slice(0, number);
+// };
+
+// console.log(take(array6, 4));
+// console.log(take(array6, 8));
+// console.log(take(array6, 0));
+// console.log(take(array6));
+
+// ---------------------------------------------------------------------
+
+// .takeRight(array, [n=1])
+
+// const takeRight = (array, number) => {
+//   if (number == null) return array.slice(array.length - 1);
+//   if (number > array.length) return array;
+//   if (number === 0) return array.slice(array.length);
+
+//   return array.slice(-number);
+// };
+
+// console.log(takeRight(array6));
+// console.log(takeRight(array6, 2));
+// console.log(takeRight(array6, 4));
+// console.log(takeRight(array6, 8));
+// console.log(takeRight(array6, 0));
