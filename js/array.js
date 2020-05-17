@@ -373,3 +373,31 @@ const arrayAF = ["a", "b", "c", "d", "e", "f"];
 // console.log(takeRight(array6, 4));
 // console.log(takeRight(array6, 8));
 // console.log(takeRight(array6, 0));
+
+// ---------------------------------------------------------------------
+
+// .union([arrays])
+// Creates an array of unique valuse
+
+// const union = (arr, ...args) => [...new Set(arr.concat(...args))];
+
+// console.log(union([1], [2], [3, 4]));
+
+// ---------------------------------------------------------------------
+
+// .zip([arrays])
+// Creates an array of grouped elements
+
+const zip = (array, ...args) =>
+  array.map((value, index) => [value, ...args.map((arr) => arr[x])]);
+
+console.log(zip(["a", "b"], [1, 2]));
+
+// .unzip([array])
+// const unzip = ([...args]) => zip(...args);
+// console.log(
+//   unzip([
+//     ["a", 1],
+//     ["b", 2],
+//   ])
+// );
