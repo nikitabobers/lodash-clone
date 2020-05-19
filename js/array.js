@@ -388,10 +388,10 @@ const arrayAF = ["a", "b", "c", "d", "e", "f"];
 // .zip([arrays])
 // Creates an array of grouped elements
 
-const zip = (array, ...args) =>
-  array.map((value, index) => [value, ...args.map((arr) => arr[x])]);
+// const zip = (array, ...args) =>
+//   array.map((value, index) => [value, ...args.map((arr) => arr[index])]);
 
-console.log(zip(["a", "b"], [1, 2]));
+// console.log(zip(["a", "b"], [1, 2]));
 
 // .unzip([array])
 // const unzip = ([...args]) => zip(...args);
@@ -401,3 +401,33 @@ console.log(zip(["a", "b"], [1, 2]));
 //     ["b", 2],
 //   ])
 // );
+
+// ---------------------------------------------------------------------
+
+// .without(array, [values])
+// Creates an array excluding all given values.
+
+// const array = [1, 2, 3, 4, 2, 3];
+
+// const without = (arr, ...values) =>
+//   arr.filter((value) => !values.includes(value));
+
+// console.log(without(array, 1, 2));
+
+// ---------------------------------------------------------------------
+
+// xor([arrays])
+// Creates an array of unique values that is the symmetric difference of the given array
+
+const findDuplicateNumber = (array) =>
+  parseInt(array.filter((item, index) => array.indexOf(item) !== index));
+
+const removeNumber = (array, number) => array.filter((item) => item !== number);
+
+const xor = (arrayOne, arrayTwo) => {
+  const array = arrayOne.concat(arrayTwo);
+  const duplicate = findDuplicateNumber(array);
+  return removeNumber(array, duplicate);
+};
+
+console.log(xor([2, 1], [2, 4, 3]));
