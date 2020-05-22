@@ -419,15 +419,64 @@ const arrayAF = ["a", "b", "c", "d", "e", "f"];
 // xor([arrays])
 // Creates an array of unique values that is the symmetric difference of the given array
 
-const findDuplicateNumber = (array) =>
-  parseInt(array.filter((item, index) => array.indexOf(item) !== index));
+// const findDuplicateNumber = (array) =>
+//   parseInt(array.filter((item, index) => array.indexOf(item) !== index));
 
-const removeNumber = (array, number) => array.filter((item) => item !== number);
+// const removeNumber = (array, number) => array.filter((item) => item !== number);
 
-const xor = (arrayOne, arrayTwo) => {
-  const array = arrayOne.concat(arrayTwo);
-  const duplicate = findDuplicateNumber(array);
-  return removeNumber(array, duplicate);
-};
+// const xor = (arrayOne, arrayTwo) => {
+//   const array = arrayOne.concat(arrayTwo);
+//   const duplicate = findDuplicateNumber(array);
+//   return removeNumber(array, duplicate);
+// };
 
-console.log(xor([2, 1], [2, 4, 3]));
+// console.log(xor([2, 1], [2, 4, 3]));
+
+// ---------------------------------------------------------------------
+
+// .countBy
+
+// const countBy = (collection, func) => {
+//   const output = [];
+
+//   for (let item of collection) {
+//     output.push(Math.floor(item));
+//   }
+
+//   let result = {};
+
+//   output.forEach((x) => (result[x] = (result[x] || 0) + 1));
+
+//   return result;
+// };
+
+// console.log(countBy([6.1, 4.2, 6.3]));
+
+// ---------------------------------------------------------------------
+
+// .forEach(collection, iteratee)
+
+// const array = [1, 2, 3];
+
+// // array.forEach(function (value) {
+// //   console.log(value);
+// // });
+
+// const forEachRight = (array) => {
+//   const reverse = array.reverse();
+//   return reverse.forEach((item) => console.log(item));
+// };
+
+// forEachRight(array);
+
+// ---------------------------------------------------------------------
+
+const users = [
+  { name: "mike", age: 30, active: false },
+  { name: "bob", age: 20, active: false },
+];
+
+const checkAge = (age) => age > 18;
+
+console.log(users.every((user) => checkAge(user.age)));
+
