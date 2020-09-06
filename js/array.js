@@ -1,21 +1,26 @@
-// ------------------ Array ------------------
+const arrNum6 = [1, 2, 3, 4, 5, 6];
+const arrNum5 = [1, 2, 3, 4, 5];
+const arrayLet = ["a", "b", "c", "d", "e", "f"];
 
-const array4 = [1, 2, 3, 4];
-const array6 = [1, 2, 3, 4, 5, 6];
-const arrayAF = ["a", "b", "c", "d", "e", "f"];
+// ---------------------------------------------------------------------
 
 // .chunk(array, [size=1])
 // Creates an array of elements split into groups the length of size.
 
 // const chunk = (arr, size) => {
-//     let output = [];
-//     let newArr = [...arr];
-//     if (size <= 0) return newArr;
-//     while (newArr.length) output.push(newArr.splice(0, size));
-//     return output;
+// 	let output = [];
+// 	let newArr = [...arr];
+
+// 	if (size <= 0) return newArr;
+
+// 	while (newArr.length) {
+// 		output.push(newArr.splice(0, size));
+// 	}
+
+// 	return output;
 // };
 
-// const result = chunk(array, 2);
+// const result = chunk(arrNum5, 2);
 // console.log(result);
 
 // ---------------------------------------------------------------------
@@ -25,10 +30,12 @@ const arrayAF = ["a", "b", "c", "d", "e", "f"];
 
 // const array = [1, 2, 0, "", 4, false];
 
-// const compact = ([...arr]) => --> {
-// 			let output = [];
+// const compact = ([...arr]) => {
+// 	let output = [];
 // 	for (let truthy of arr) {
-
+// 		if (truthy) {
+// 			output.push(truthy);
+// 		}
 // 	}
 // 	return output;
 // };
@@ -38,22 +45,28 @@ const arrayAF = ["a", "b", "c", "d", "e", "f"];
 
 // ---------------------------------------------------------------------
 
-// .difference(array, [values])
-// Creates a new array concatenating array with any additional arrays and/or values.
+// difference(array, [values]);
+// Creates an array of array values not included in the other given arrays
 
-// const array = [1, 2, 3, 4];
+// const _ = {
+// 	difference: function (arr, values) {
+// 		const output = [];
 
-// const difference = (arr, values) => {
-//     const output = [];
-//     arr.filter(value => {
-//         if (values.includes(value)) {
-//             output.push(value);
-//         }
-//     });
-//     return output;
+// 		if (values.length <= 0 || values === undefined) {
+// 			return arr;
+// 		}
+
+// 		arr.filter((value) => {
+// 			if (values.includes(value)) {
+// 				output.push(value);
+// 			}
+// 		});
+// 		return output;
+// 	},
 // };
 
-// const result = difference(array, [2, 3]);
+// const resultEmpty = _.difference(arr, []);
+// const result = _.difference(arr, [1, 2]);
 // console.log(result);
 
 // ---------------------------------------------------------------------
@@ -61,22 +74,35 @@ const arrayAF = ["a", "b", "c", "d", "e", "f"];
 // .drop(array, [n])
 // Creates a slice of array with n elements dropped from the end.
 
-// const array = [1, 2, 3, 4];
-
 // const drop = (arr, n) => {
-//     const output = [...arr];
-//     if (n <= 0 || n === undefined) {
-//         return arr;
-//     }
-//     while (n > 0) {
-//         n--;
-//         output.pop();
-//     }
-//     return output;
+// 	const output = [...arr];
+// 	if (n <= 0 || n === undefined) {
+// 		return arr;
+// 	}
+// 	while (n > 0) {
+// 		n--;
+// 		output.pop();
+// 	}
+// 	return output;
 // };
 
-// const result = drop(array, 2);
+// const result = drop(arrNum6, 2);
 // console.log(result);
+
+// ---------------------------------------------------------------------
+
+// _.fill(array,value,start,end)
+// Fills elements of array with value from start up to, but not including, end.
+
+// const _ = {
+// 	fill: function (arr, value, start, end) {
+// 		return arr.fill(value, start, end);
+// 	},
+// };
+
+// const fillA = _.fill(arrNum5, "a", 0, 3);
+// const fillB = _.fill(arrNum5, "b", 0);
+// console.log(fillA);
 
 // ---------------------------------------------------------------------
 
@@ -134,7 +160,7 @@ const arrayAF = ["a", "b", "c", "d", "e", "f"];
 //   { user: "pebbles", age: 11, active: true },
 // ];
 
-// const result = users.findIndex((o) => o.age >= 10);
+// const result = users.findIndex((obj) => obj.age >= 10);
 
 // console.log(result);
 
@@ -431,4 +457,3 @@ const arrayAF = ["a", "b", "c", "d", "e", "f"];
 // };
 
 // console.log(xor([2, 1], [2, 4, 3]));
-
