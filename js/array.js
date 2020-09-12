@@ -45,6 +45,20 @@ const arrayLet = ["a", "b", "c", "d", "e", "f"];
 
 // ---------------------------------------------------------------------
 
+//_.concat(array, [values])
+// Creates a new array concatenating array with any additional arrays and/or values.
+
+// const _ = {
+// 	concat: function (arr, ...values) {
+// 		return arr.concat(values);
+// 	},
+// };
+
+// const result = _.concat(arrNum6, 1, 9, [2]);
+
+// console.log(result);
+// ---------------------------------------------------------------------
+
 // difference(array, [values]);
 // Creates an array of array values not included in the other given arrays
 
